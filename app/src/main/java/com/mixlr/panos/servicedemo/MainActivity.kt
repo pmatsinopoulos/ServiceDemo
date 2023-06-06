@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import com.mixlr.panos.servicedemo.MyBackgroundService.Companion.TAG
 import com.mixlr.panos.servicedemo.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -16,12 +17,12 @@ class MainActivity : AppCompatActivity() {
         val serviceIntent = Intent(this, MyBackgroundService::class.java)
         binding.apply {
             btnStart.setOnClickListener {
-                Log.i("MYTAG", "btnStart listener...")
+                Log.i(TAG, "btnStart listener...")
                 startService(serviceIntent)
             }
 
             btnStop.setOnClickListener {
-                Log.i("MYTAG", "btnStop listener...")
+                Log.i(TAG, "btnStop listener...")
                 stopService(serviceIntent)
             }
         }
